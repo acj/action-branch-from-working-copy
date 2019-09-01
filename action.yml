@@ -1,0 +1,29 @@
+name: Create Branch from Working Copy
+description: 'Creates a branch from files that have been modified'
+
+author: Adam Jensen <acjensen@gmail.com>
+
+inputs:
+  branch_name:
+    description: 'New branch name'
+    required: true
+  commit_message:
+    description: 'Commit message'
+    required: true
+  commit_author_name:
+    description: 'Name of the commit author'
+    required: true
+  commit_author_email:
+    description: 'Email address of the commit author'
+    required: true
+  repository_path:
+    description: 'Filesystem path to the repository, relative to $GITHUB_WORKSPACE'
+    default: '.'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  icon: 'git-commit'
+  color: blue
