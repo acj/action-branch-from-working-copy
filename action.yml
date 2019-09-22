@@ -19,6 +19,9 @@ inputs:
   repository_path:
     description: 'Filesystem path to the repository, relative to $GITHUB_WORKSPACE'
     default: '.'
+  fail_if_branch_exists:
+    description: 'Whether the action should fail if the given branch already exists'
+    default: 'true'
 
 runs:
   using: 'docker'
