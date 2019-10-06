@@ -9,8 +9,5 @@ LABEL "repository"="http://github.com/acj/action-branch-from-working-copy"
 LABEL "homepage"="http://github.com/acj/action-branch-from-working-copy"
 LABEL "maintainer"="Adam Jensen <acjensen@gmail.com>"
 
-ENV INPUT_REPOSITORY_PATH "."
-ENV INPUT_FAIL_IF_BRANCH_EXISTS "true"
-
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT /entrypoint.sh

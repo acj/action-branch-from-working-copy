@@ -25,14 +25,16 @@ branch_exists=$?
 set -e
 
 if [ $branch_exists -eq 0 ]; then
-    if [ "$INPUT_FAIL_IF_BRANCH_EXISTS" = "true" ]; then
+    echo ::set-output name=branch_name_already_exists::true
+    if [ "$INPUT_FAIL_IF_BRANCH_EXISTS" == "true" ]; then
         echo "Branch $INPUT_BRANCH_NAME already exists"
         exit 1
     else
-        echo ::set-output name=branch_name_already_exists::"false"
         exit 0
     fi
 fi
+
+echo ::set-output name=branch_name_already_exists::false
 
 cd $GITHUB_WORKSPACE/$INPUT_REPOSITORY_PATH
 if ! git diff --quiet; then
