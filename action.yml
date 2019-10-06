@@ -22,6 +22,9 @@ inputs:
   fail_if_branch_exists:
     description: 'Whether the action should fail if the given branch already exists'
     default: 'true'
+outputs:
+  branch_name_already_exists:
+    description: 'Whether branch_name already exists in the repository'
 
 runs:
   using: 'docker'
