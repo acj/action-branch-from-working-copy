@@ -4,7 +4,7 @@ GitHub Action that creates a new git branch from your working copy
 
 ## Usage
 
-See action.yml For comprehensive list of options.
+See [action.yml](./action.yml) for comprehensive list of options.
 
 ```yaml
 name: "Create branch from working copy"
