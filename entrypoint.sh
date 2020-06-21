@@ -20,6 +20,10 @@ EOF
 }
 
 set +e
+# Ensure existing remote branch (if any) is visible
+git remote set-branches origin "$INPUT_BRANCH_NAME"
+git fetch
+
 git show-ref --verify --quiet refs/remotes/origin/"$INPUT_BRANCH_NAME"
 branch_exists=$?
 set -e
